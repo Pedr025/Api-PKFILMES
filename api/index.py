@@ -5,7 +5,10 @@ import os
 app = Flask(__name__)
 
 def load_data():
-    json_path = os.path.join(os.getcwd(), 'movies_data.json')
+
+# LINHA NOVA - USAR ESTA
+json_path = os.path.join(os.path.dirname(__file__), '..', 'movies_data.json')
+
     try:
         with open(json_path, 'r', encoding='utf-8') as f:
             return json.load(f)
